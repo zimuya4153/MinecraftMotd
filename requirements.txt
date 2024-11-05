@@ -1,0 +1,4 @@
+json_repair==0.29.1
+Pillow==11.0.0
+pyinstaller==6.4.0
+uuid==1.30
