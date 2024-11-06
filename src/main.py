@@ -7,7 +7,8 @@ FiltrationError: list[str] = [
     "timed out",
     "[WinError 10054] 远程主机强迫关闭了一个现有的连接。",
     "[Errno 11001] getaddrinfo failed",
-    "[WinError 10061] 由于目标计算机积极拒绝，无法连接。"
+    "[WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+    "Not a Minecraft server"
 ]
 
 if __name__ == "__main__":
@@ -17,7 +18,7 @@ if __name__ == "__main__":
             "version": i18n.get("version.format", {
                 "major": 1,
                 "minor": 0,
-                "patch": 0
+                "patch": 1
             })
         }),
         usage = ColorText.colorTextTranslate("".join([
@@ -40,8 +41,6 @@ if __name__ == "__main__":
             argv.port.append(int(ip.split(":")[1]))
             argv.ip.remove(ip)
             argv.ip.append(ip.split(":")[0])
-    argv.ip = list(set(argv.ip))
-    argv.port = list(set(argv.port))
 
     result: list[str] = []
 
@@ -105,17 +104,21 @@ if __name__ == "__main__":
             if str(error) in FiltrationError: return
             result.append(i18n.get("result.java.error", {"ip": ip, "port": port, "error": str(error)}))
 
-    for ip in argv.ip:
+    for ip in list(set(argv.ip)):
         if not re.match(r"^([0-9a-zA-Z-]{1,}\.)+([a-zA-Z]{2,})$", ip) and not re.match(r"^((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$", ip):
             result.append(i18n.get("result.ip.error", {"ip": ip}))
             continue
-        for port in argv.port:
-            threading.Thread(target = Bedrock, args = copy.deepcopy((ip, port, argv.timeout))).start()
-            threading.Thread(target = Java, args = copy.deepcopy((ip, port, argv.timeout, argv.image))).start()
+        for port in list(set(argv.port)):
+            threading.Thread(target = Bedrock, args = copy.deepcopy((ip, port, argv.timeout)), daemon = True).start()
+            threading.Thread(target = Java, args = copy.deepcopy((ip, port, argv.timeout, argv.image)), daemon = True).start()
 
-    while threading.active_count() > 1: pass
+    try:
+        while threading.active_count() > 1: pass
+    except KeyboardInterrupt:
+        print(i18n.get("forceQuit"))
+        exit(0)
     
     print(i18n.get("result.separator"))
     if not len(result): print(i18n.get("result.empty"), end = "")
-    print(f"\n{i18n.get("result.separator")}".join(result), end = "")
+    print(f"\n{i18n.get("result.separator")}\n".join(result), end = "")
     print("\n" + i18n.get("result.separator"))

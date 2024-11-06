@@ -33,9 +33,11 @@ def JavaMotd(ip: str, port: int = 25565, timeout: int = 1) -> ServerInfo:
         client.connect((ip, port))
         client.sendall(bytes.fromhex("0600000063dd010100"))
         data = b""
-        while True:
+        count: int = 10
+        while (count := count - 1):
             try: data += client.recv(1024)
             except: break
+        if data.startswith(b"HTTP/"): raise Exception("Not a Minecraft server")
         data = str(data, encoding = "utf-8", errors = "ignore").strip()
         if not data.startswith("{"): data = data[data.find("{"): ]
         client.close()

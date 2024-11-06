@@ -15,5 +15,6 @@
     "result.java.player": "§c{name}§r§7({uuid})\n\t\t",
     "result.java.player.empty": "§cNo player online",
     "result.empty": "§cNo results were obtained",
-    "result.separator": "§l§q-§a-§s-§f-§t-§n-§h-§p-§j-§s-§3-§m-§1-§n-§6-§o-§a-§i-§o-§c-§r-§i-§u-§7-§5-§a-§u-§b-§r-§7-§p-§m-§5-§f-§q-§1-§m-§6-§p-§u-§3-§9-§7-§a-§o-§m-§m-§i-§u-§f-§i-§n-§s-§j-§8-§6-§j-§5-§e-§m-§u-§8-§h-§u-§i-§a-§f-§s-§6-§6-§r-§s-§0-§u-§8-§3-§q-§5-§5-§7"
+    "result.separator": "§l§q-§a-§s-§f-§t-§n-§h-§p-§j-§s-§3-§m-§1-§n-§6-§o-§a-§i-§o-§c-§r-§i-§u-§7-§5-§a-§u-§b-§r-§7-§p-§m-§5-§f-§q-§1-§m-§6-§p-§u-§3-§9-§7-§a-§o-§m-§m-§i-§u-§f-§i-§n-§s-§j-§8-§6-§j-§5-§e-§m-§u-§8-§h-§u-§i-§a-§f-§s-§6-§6-§r-§s-§0-§u-§8-§3-§q-§5-§5-§7",
+    "forceQuit": "§cForce out of……"
 }
