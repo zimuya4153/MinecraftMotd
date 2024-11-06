@@ -33,14 +33,14 @@ if __name__ == "__main__":
     parser.add_argument("-t", "--timeout", type = int, help = i18n.get("parser.help.timeout"))
     parser.add_argument("-img", "--image", type = str, default = False, help = i18n.get("parser.help.image"))
     argv: argparse.Namespace = parser.parse_args()
-    if not len(argv.ip): argv.ip = ["127.0.0.1"]
-    if not len(argv.port): argv.port = [19132, 25565]
-    if not argv.timeout: argv.timeout = 5
     for ip in argv.ip:
         if len(ip.split(":")) == 2 and ip.split(":")[1].isdigit():
             argv.port.append(int(ip.split(":")[1]))
             argv.ip.remove(ip)
             argv.ip.append(ip.split(":")[0])
+    if not len(argv.ip): argv.ip = ["127.0.0.1"]
+    if not len(argv.port): argv.port = [19132, 25565]
+    if argv.timeout == None or argv.timeout < 1: argv.timeout = 5
 
     result: list[str] = []
 

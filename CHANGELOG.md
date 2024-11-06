@@ -6,6 +6,7 @@
 
 - Fixed an issue with Java server Motd that may be stuck
 - Fixed a translation issue with PortV6 on the Bedrock server
+- Fixed default timeout and ip/port handling
 
 ### Added
 
