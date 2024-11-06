@@ -10,6 +10,7 @@
 ### Added
 
 - Added forced exit function
+- Added type hints to BedrockMotd and JavaMotd functions
 
 
 ## [1.0.0] - 2024-11-5  

@@ -32,7 +32,7 @@ def JavaMotd(ip: str, port: int = 25565, timeout: int = 1) -> ServerInfo:
         client.settimeout(timeout)
         client.connect((ip, port))
         client.sendall(bytes.fromhex("0600000063dd010100"))
-        data = b""
+        data: bytes = b""
         count: int = 10
         while (count := count - 1):
             try: data += client.recv(1024)
@@ -59,9 +59,9 @@ if __name__ == "__main__":
     try:
         import json
         while True:
-            ip = input("Please enter the server IP address: ")
-            port = input("Please enter the server port: ")
-            timeout = input("Please enter the timeout period: ")
+            ip: str = input("Please enter the server IP address: ")
+            port: str = input("Please enter the server port: ")
+            timeout: str = input("Please enter the timeout period: ")
             print(
                 json.dumps(
                     JavaMotd(

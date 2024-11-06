@@ -43,10 +43,10 @@ def BedrockMotd(ip: str, port: int = 19132, timeout: int = 1) -> ServerInfo:
     try:
         client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         client.settimeout(timeout)
-        guid = str(uuid.uuid4()).upper().replace('-', '')
-        now = hex(int(time.time() * 1000))[2:].zfill(16)
+        guid: str = str(uuid.uuid4()).upper().replace('-', '')
+        now: str = hex(int(time.time() * 1000))[2:].zfill(16)
         client.sendto(bytes.fromhex(f"01{now}00FFFF00FEFEFEFEFDFDFDFD12345678{guid[8:12]}{guid[20:24]}"), (ip, port))
-        data = client.recvfrom(1024)[0][35:].decode('utf-8').split(';')
+        data: list[str] = client.recvfrom(1024)[0][35:].decode('utf-8').split(';')
         client.close()
 
         def getListData(data: list[str], index: int = 0, type: type = str, default: any = None) -> any:
@@ -83,9 +83,9 @@ if __name__ == "__main__":
     try:
         import json
         while True:
-            ip = input("Please enter the server IP address: ")
-            port = input("Please enter the server port: ")
-            timeout = input("Please enter the timeout period: ")
+            ip: str = input("Please enter the server IP address: ")
+            port: str = input("Please enter the server port: ")
+            timeout: str = input("Please enter the timeout period: ")
             print(
                 json.dumps(
                     BedrockMotd(
