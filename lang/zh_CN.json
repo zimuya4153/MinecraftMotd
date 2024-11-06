@@ -9,7 +9,7 @@
     "result.ip.error": "§d[CheckIP] §cIP地址§e{ip}§c不合法",
     "result.bedrock.error": "§d[Bedrock] §e{ip}§6:§a{port}\n§a发生错误: §c{error}",
     "result.java.error": "§d[Java] §e{ip}§6:§a{port}\n§a发生错误: §c{error}",
-    "result.bedrock.success": "§d[Bedrock] §e{ip}§6:§a{port}\n§bMotd§a\t\t{motd}\n§b版本\t\t§g{minecraftVersionNetwork}§7({networkProtocolVersion})\n§b玩家数\t\t§d{onlinePlayers} §a/ §e{maxPlayers}\n§b存档名\t\t§1{levelName}\n§b默认游戏模式\t§c{gameMode}\n§b端口\t\t§9{portV4} §g| §9{PortV6}\n§bGUID\t\t§7{serverGuid}\n§b花费时间\t§a{time}ms",
+    "result.bedrock.success": "§d[Bedrock] §e{ip}§6:§a{port}\n§bMotd§a\t\t{motd}\n§b版本\t\t§g{minecraftVersionNetwork}§7({networkProtocolVersion})\n§b玩家数\t\t§d{onlinePlayers} §a/ §e{maxPlayers}\n§b存档名\t\t§1{levelName}\n§b默认游戏模式\t§c{gameMode}\n§b端口\t\t§9{portV4} §g| §9{portV6}\n§bGUID\t\t§7{serverGuid}\n§b花费时间\t§a{time}ms",
     "result.java.success": "§d[Java] §e{ip}§6:§a{port}\n§b版本\t\t§g{minecraftVersionNetwork}§7({networkProtocolVersion})\n§b在线玩家数\t§d{onlinePlayers} §a/ §e{maxPlayers}\n§b花费时间\t§a{time}ms\n§bMotd§a\t\t{motd}\n§b玩家列表\t{players}",
     "result.java.motd.line": "\n\t\t",
     "result.java.player": "§c{name}§r§7({uuid})\n\t\t",

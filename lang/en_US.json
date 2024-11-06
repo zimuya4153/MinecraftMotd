@@ -9,7 +9,7 @@
     "result.ip.error": "§d[CheckIP] §cIP address §e{ip}§c is not valid",
     "result.bedrock.error": "§d[Bedrock] §e{ip}§6:§a{port}\n§error: §c{error}",
     "result.java.error": "§d[Java] §e{ip}§6:§a{port}\n§aerror: §c{error}",
-    "result.bedrock.success": "§d[Bedrock] §e{ip}§6:§a{port}\n§bMotd§a\t\t   {motd}\n§bVersion\t\t   §g{minecraftVersionNetwork}§7({networkProtocolVersion})\n§bPlayer Count\t   §d{onlinePlayers} §a/ §e{maxPlayers}\n§bWorld Name\t   §1{levelName}\n§bDefault GameMode   §c{gameMode}\n§bPort\t\t   §9{portV4} §g| §9{PortV6}\n§bGUID\t\t   §7{serverGuid}\n§bTime\t\t   §a{time}ms",
+    "result.bedrock.success": "§d[Bedrock] §e{ip}§6:§a{port}\n§bMotd§a\t\t   {motd}\n§bVersion\t\t   §g{minecraftVersionNetwork}§7({networkProtocolVersion})\n§bPlayer Count\t   §d{onlinePlayers} §a/ §e{maxPlayers}\n§bWorld Name\t   §1{levelName}\n§bDefault GameMode   §c{gameMode}\n§bPort\t\t   §9{portV4} §g| §9{portV6}\n§bGUID\t\t   §7{serverGuid}\n§bTime\t\t   §a{time}ms",
     "result.java.success": "§d[Java] §e{ip}§6:§a{port}\n§bVersion\t\t§g{minecraftVersionNetwork}§7({networkProtocolVersion})\n§bPlayer Count\t§d{onlinePlayers} §a/ §e{maxPlayers}\n§btime\t\t§a{time}ms\n§bMotd§a\t\t{motd}\n§bPlayerList\t{players}",
     "result.java.motd.line": "\n\t\t",
     "result.java.player": "§c{name}§r§7({uuid})\n\t\t",
